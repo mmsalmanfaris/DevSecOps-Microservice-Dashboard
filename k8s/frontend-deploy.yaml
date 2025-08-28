@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-frontend
+  labels:
+    app: micro-frontend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: micro-frontend
+  template:
+    metadata:
+      labels:
+        app: micro-frontend
+    spec:
+      containers:
+       - name: micro-frontend
+         image: micro-frontend:v1
+         ports:
+          - containerPort: 80
+
+
