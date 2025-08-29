@@ -13,7 +13,7 @@ const SERVICES = [
   {
     name: 'Python Service',
     description: 'Data processing and analysis',
-    baseUrl: 'http://python-service:8082',
+    baseUrl: 'http://python-service:8082', 
     id: 'python',
     healthEndpoint: '/health'
   },

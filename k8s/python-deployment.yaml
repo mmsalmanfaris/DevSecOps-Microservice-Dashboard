@@ -5,7 +5,7 @@ metadata:
   labels:
     app: micro-python
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       app: micro-python
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: micro-python
-        image: micro-python:v1
+        image: mmsalmanfaris/micro-python:v1
         ports:
           - containerPort: 8082

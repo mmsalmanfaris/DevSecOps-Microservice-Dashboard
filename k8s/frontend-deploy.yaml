@@ -5,7 +5,7 @@ metadata:
   labels:
     app: micro-frontend
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       app: micro-frontend
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
        - name: micro-frontend
-         image: micro-frontend:v1
+         image: mmsalmanfaris/micro-frontend:v1
          ports:
           - containerPort: 80
 
