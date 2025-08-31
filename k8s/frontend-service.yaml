@@ -8,6 +8,4 @@ spec:
     app: micro-frontend
   ports:
     - port: 80
-      targetPort: 80
-      nodePort: 30080
-   
+      targetPort: 80   
