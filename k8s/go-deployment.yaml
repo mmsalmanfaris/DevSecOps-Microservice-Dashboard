@@ -16,7 +16,8 @@ spec:
         app: micro-go
     
     spec:
-      - name: micro-go
-        image: mmsalmanfaris/micro-go:v1
-        ports:
-          -  containerPort: 8081
+      containers:
+        - name: micro-go
+          image: mmsalmanfaris/micro-go:v1
+          ports:
+            -  containerPort: 8081
