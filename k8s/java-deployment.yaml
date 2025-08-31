@@ -7,7 +7,8 @@ metadata:
 spec:
   replicas: 2
   selector:
-    matchLabels: micro-java
+    matchLabels: 
+      app: micro-java
   template:
     metadata:
       labels:
@@ -16,3 +17,5 @@ spec:
       containers:
         - name: micro-java
           image: mmsalmanfaris/micro-java:v1
+          ports:
+           - containerPort: 8084

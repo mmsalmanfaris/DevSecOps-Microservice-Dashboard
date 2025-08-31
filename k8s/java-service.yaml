@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: java-service
 spec:
+  type: NodePort
   selector:
     app: micro-java
   ports:
    -  port: 8084
       targetPort: 8084
+      nodePort: 30084

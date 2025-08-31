@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
        - name: micro-frontend
-         image: mmsalmanfaris/micro-frontend:v3
+         image: mmsalmanfaris/micro-frontend:v4
          ports:
           - containerPort: 80
 
