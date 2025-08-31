@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-java
+  labels:
+    app: micro-java
+spec:
+  replicas: 2
+  selector:
+    matchLabels: micro-java
+  template:
+    metadata:
+      labels:
+        app: micro-java
+    spec:
+      containers:
+        - name: micro-java
+          image: mmsalmanfaris/micro-java:v1
