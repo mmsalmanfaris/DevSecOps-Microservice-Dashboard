@@ -6,28 +6,28 @@ const SERVICES = [
   {
     name: 'Go Service',
     description: 'System information and calculations',
-    baseUrl: 'http://54.234.132.132/api/go',
+    baseUrl: "http://localhost:8081",
     id: 'go',
     healthEndpoint: '/health'
   },
   {
     name: 'Python Service',
     description: 'Data processing and analysis',
-    baseUrl: 'http://54.234.132.132/api/python', 
+    baseUrl: "http://localhost:8082", 
     id: 'python',
     healthEndpoint: '/health'
   },
   {
     name: 'Node.js Service',
     description: 'Session management and server stats',
-    baseUrl: 'http://54.234.132.132/api/nodejs',
+    baseUrl: "http://localhost:8083",
     id: 'nodejs',
     healthEndpoint: '/health'
   },
   {
     name: 'Java Service',
     description: 'Business logic processing',
-    baseUrl: 'http://54.234.132.132/api/java',
+    baseUrl: "http://localhost:8084",
     id: 'java',
     healthEndpoint: '/health'
   }

@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./frontend 
+    ports:
+      - "3000:80"
+    depends_on:
+      # - go-service
+      - python-service
+      - nodejs-service
+      # - java-service
+
+
+  # go-service:
+  #   build: ./go-service
+  #   ports:
+  #     - "8081:8081"
+
+  python-service:
+    build: ./python-service
+    ports:
+      - "8082:8082"
+
+  nodejs-service:
+    build: ./nodejs-service
+    ports:
+      - "8083:8083"
+
+  # java-service:
+  #   build: ./java-service
+  #   ports:
+  #     - "8084:8084"
