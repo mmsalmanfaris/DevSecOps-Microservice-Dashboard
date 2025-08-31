@@ -12,21 +12,25 @@ services:
 
 
   go-service:
+    container_name: micro-go
     build: ./go-service
     ports:
       - "8081:8081"
 
   python-service:
+    container_name: micro-python
     build: ./python-service
     ports:
       - "8082:8082"
 
   nodejs-service:
+    container_name: micro-nodejs
     build: ./nodejs-service
     ports:
       - "8083:8083"
 
   java-service:
+    container_name: micro-java
     build: ./java-service
     ports:
       - "8084:8084"
