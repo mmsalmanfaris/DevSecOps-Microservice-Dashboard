@@ -6,6 +6,5 @@ spec:
   selector:
     app: micro-python
   ports:
-   - protocol: TCP
-     port: 8082
+   - port: 8082
      targetPort: 8082
