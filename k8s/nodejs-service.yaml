@@ -3,10 +3,8 @@ kind: Service
 metadata:
   name: nodejs-service
 spec:
-  type: NodePort
   selector:
     app: micro-nodejs
   ports:
    - port: 8083
      targetPort: 8083
-     nodePort: 30083
