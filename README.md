@@ -183,6 +183,17 @@ curl http://localhost:8084/info   # Java Service
 Deploy to Kubernetes cluster:
 
 ```bash
+
+# Start local cluster
+kind create cluster --name devsecops
+
+# Load images to cluster
+kind load docker-image devsecops-microservice-dashboard_go-service:latest --name devsecops
+kind load docker-image devsecops-microservice-dashboard_python-service:latest --name devsecops
+kind load docker-image devsecops-microservice-dashboard_nodejs-service:latest --name devsecops
+kind load docker-image devsecops-microservice-dashboard_java-service:latest --name devsecops
+kind load docker-image devsecops-microservice-dashboard_frontend:latest --name devsecops
+
 # Apply all Kubernetes manifests
 kubectl apply -f k8s/
 
@@ -191,15 +202,10 @@ kubectl get deployments
 kubectl get services
 kubectl get pods
 
-# Check ingress (if NGINX Ingress Controller is installed)
 kubectl get ingress
 
 # Port forward to access services locally
 kubectl port-forward svc/frontend-service 3000:80
-kubectl port-forward svc/java-service 8084:8084
-kubectl port-forward svc/go-service 8081:8081
-kubectl port-forward svc/nodejs-service 8083:8083
-kubectl port-forward svc/python-service 8082:8082
 
 # Delete all resources
 kubectl delete -f k8s/
@@ -249,10 +255,8 @@ DevSecOps-Microservice-Dashboard/
 │   ├── requirements.txt             # Python dependencies
 │   └── Dockerfile                   # Python container config
 └── k8s/                            # Kubernetes manifests
-    ├── *-deployment.yaml            # Service deployments
-    ├── *-service.yaml               # Service configurations
-    ├── ingress.yaml                 # Ingress configuration
-    └── metalLB-config.yaml          # Load balancer config
+    ├── frontend.yaml            
+    ├── backend.yaml
 ```
 
 ## 📄 License
