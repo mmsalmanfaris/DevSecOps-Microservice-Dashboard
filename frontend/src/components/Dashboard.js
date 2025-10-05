@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
-// Service configuration
+// Service configuration - using proxy endpoints
 const SERVICES = [
   {
     name: 'Go Service',
     description: 'System information and calculations',
-    baseUrl: "http://localhost:8081",
+    baseUrl: "/api/go",
     id: 'go',
     healthEndpoint: '/health'
   },
   {
     name: 'Python Service',
     description: 'Data processing and analysis',
-    baseUrl: "http://localhost:8082", 
+    baseUrl: "/api/python", 
     id: 'python',
     healthEndpoint: '/health'
   },
   {
     name: 'Node.js Service',
     description: 'Session management and server stats',
-    baseUrl: "http://localhost:8083",
+    baseUrl: "/api/nodejs",
     id: 'nodejs',
     healthEndpoint: '/health'
   },
   {
     name: 'Java Service',
     description: 'Business logic processing',
-    baseUrl: "http://localhost:8084",
+    baseUrl: "/api/java",
     id: 'java',
     healthEndpoint: '/health'
   }

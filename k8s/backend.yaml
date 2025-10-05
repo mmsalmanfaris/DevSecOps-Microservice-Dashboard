@@ -1,0 +1,139 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-service
+  namespace: devsecops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-service
+  template:
+    metadata:
+      labels:
+        app: go-service
+    spec:
+      containers:
+      - name: go-service
+        image: devsecops-microservice-dashboard_go-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-service
+  namespace: devsecops
+spec:
+  selector:
+    app: go-service
+  ports:
+  - port: 8081
+    targetPort: 8081
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-service
+  namespace: devsecops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-service
+  template:
+    metadata:
+      labels:
+        app: python-service
+    spec:
+      containers:
+      - name: python-service
+        image: devsecops-microservice-dashboard_python-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+  namespace: devsecops
+spec:
+  selector:
+    app: python-service
+  ports:
+  - port: 8082
+    targetPort: 8082
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-service
+  namespace: devsecops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-service
+  template:
+    metadata:
+      labels:
+        app: nodejs-service
+    spec:
+      containers:
+      - name: nodejs-service
+        image: devsecops-microservice-dashboard_nodejs-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-service
+  namespace: devsecops
+spec:
+  selector:
+    app: nodejs-service
+  ports:
+  - port: 8083
+    targetPort: 8083
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-service
+  namespace: devsecops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-service
+  template:
+    metadata:
+      labels:
+        app: java-service
+    spec:
+      containers:
+      - name: java-service
+        image: devsecops-microservice-dashboard_java-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8084
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-service
+  namespace: devsecops
+spec:
+  selector:
+    app: java-service
+  ports:
+  - port: 8084
+    targetPort: 8084
+  type: ClusterIP

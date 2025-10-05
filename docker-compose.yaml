@@ -1,36 +1,56 @@
 version: "3.9"
+
+networks:
+  devsecops-network:
+    driver: bridge
+
 services:
   frontend:
     build: ./frontend 
     ports:
       - "3000:80"
+    networks:
+      - devsecops-network
     depends_on:
       - go-service
       - python-service
       - nodejs-service
       - java-service
+    environment:
+      - GO_SERVICE_URL=http://go-service:8081
+      - PYTHON_SERVICE_URL=http://python-service:8082
+      - NODEJS_SERVICE_URL=http://nodejs-service:8083
+      - JAVA_SERVICE_URL=http://java-service:8084
 
 
   go-service:
     container_name: micro-go
     build: ./go-service
-    ports:
-      - "8081:8081"
+    networks:
+      - devsecops-network
+    expose:
+      - "8081"
 
   python-service:
     container_name: micro-python
     build: ./python-service
-    ports:
-      - "8082:8082"
+    networks:
+      - devsecops-network
+    expose:
+      - "8082"
 
   nodejs-service:
     container_name: micro-nodejs
     build: ./nodejs-service
-    ports:
-      - "8083:8083"
+    networks:
+      - devsecops-network
+    expose:
+      - "8083"
 
   java-service:
     container_name: micro-java
     build: ./java-service
-    ports:
-      - "8084:8084"
+    networks:
+      - devsecops-network
+    expose:
+      - "8084"
