@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: go-service
-        image: devsecops-microservice-dashboard_go-service:latest
-        imagePullPolicy: Never
+        image: mmsalmanfaris/devsecops-go-service:v.1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
 ---
@@ -50,8 +50,8 @@ spec:
     spec:
       containers:
       - name: python-service
-        image: devsecops-microservice-dashboard_python-service:latest
-        imagePullPolicy: Never
+        image: mmsalmanfaris/devsecops-python-service:v.1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8082
 ---
@@ -85,8 +85,8 @@ spec:
     spec:
       containers:
       - name: nodejs-service
-        image: devsecops-microservice-dashboard_nodejs-service:latest
-        imagePullPolicy: Never
+        image: mmsalmanfaris/devsecops-nodejs-service:v.1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8083
 ---
@@ -120,8 +120,8 @@ spec:
     spec:
       containers:
       - name: java-service
-        image: devsecops-microservice-dashboard_java-service:latest
-        imagePullPolicy: Never
+        image: mmsalmanfaris/devsecops-java-service:v.1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8084
 ---

@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: devsecops-microservice-dashboard_frontend:latest
-        imagePullPolicy: Never
+        image: mmsalmanfaris/devsecops-frontend-service:v.1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
